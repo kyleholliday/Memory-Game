@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="memory-css.css">
+  <title>Memory Game</title>
+</head>
+
+<body>
+
+  <div class="gameboard">
+
+    <!-- Scoreboard -->
+    <section class="scoreboard">
+      <!-- Red Player -->
+      <div class="player-section-holder player-section-holder-0">
+        <div class="player-0 player-name-holder active">
+          <div class="name-0 player-name">Red</div>
+        </div>
+        <div class="score" id="score-0">0</div>
+      </div>
+
+      <!-- Blue Player -->
+      <div class="player-section-holder player-section-holder-1">
+        <div class="player-1 player-name-holder">
+          <div class="name-1 player-name">Blue</div>
+        </div>
+        <div class="score" id="score-1">0</div>
+      </div>
+
+      <button class="new-game">New Game</button>
+
+    </section>
+
+    <!-- Grid where the cards are laid -->
+    <section id="grid"></section>
+
+  </div>
+
+  <script src="memory-game-js.js"></script>
+
+</body>
+
+</html>

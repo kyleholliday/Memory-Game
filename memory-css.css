@@ -1,0 +1,178 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  margin: 20px 0;
+  background-color: #fdfbfb;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #d0d6d9 100%);
+  height: 900px;
+}
+
+/* Top section / scoreboard */
+.scoreboard {
+  max-width: 960px;
+  position: relative;
+  margin: 50px auto 0;
+}
+
+.player-section-holder {
+  width: 50%;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+
+.player-name-holder {
+  height: 50px;
+  font-size: 26px;
+  transition: all 0.4s;
+}
+
+.player-section-holder-0 {
+  color: #F62A66;
+}
+
+.player-section-holder-1 {
+  color: #4856C6;
+}
+
+.active .player-name {
+  font-weight: 900;
+}
+
+.active::after {
+  content: "\2022";
+  font-size: 28px;
+  position: relative;
+  color: #FFBA00;
+  top: -34px;
+  right: -82px;
+  transition: all 0.4s
+}
+
+.score {
+  font-size: 36px;
+}
+
+/* New Game button */
+.new-game {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #FFFFFF;
+  border: 5px solid #31393C;
+  border-radius: 8px;
+  box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.3);
+  color: #31393C;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  outline: transparent;
+  padding: 8px 16px;
+  transition: box-shadow 0.15s ease;
+}
+
+.new-game:hover {
+  box-shadow: 0 0 0;
+}
+
+/* Grid where the cards are laid */
+#grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 240px;
+}
+
+/* Cards */
+.card {
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.card:hover {
+  transition: all 0.4s;
+  position: relative;
+  top: -3px;
+  left: -3px;
+}
+
+.card,
+.back,
+.front {
+  height: 180px;
+  width: 130px;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: url('img/main-back.png') no-repeat center center / contain;
+}
+
+.front:hover {
+  filter: drop-shadow(9px 9px 9px rgba(0, 0, 0, 0.3));
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: transparent !important;
+}
+
+/* Different media queries for different body heights (so the gradient background will show up properly)  */
+@media(max-width: 1679px) {
+  body {
+    height: 1000px;
+  }
+}
+
+@media(max-width: 1400px) {
+  body {
+    height: 1200px;
+  }
+}
+
+@media(max-width: 1120px) {
+  body {
+    height: 1400px;
+  }
+}
+
+@media(max-width: 840px) {
+  body {
+    height: 1940px;
+  }
+}
+
+@media(max-width: 560px) {
+  body {
+    background-image: none;
+    background-color: #fdfbfb;
+  }
+}
